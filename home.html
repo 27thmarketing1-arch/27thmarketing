@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>27th Marketing</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,800;6..12,900&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FFFFFF}
+a{color:#111111}a:hover{color:#444444}
+@keyframes wiggle{0%{transform:translateY(0) rotate(-11deg)}25%{transform:translateY(-8px) rotate(-9.8deg)}50%{transform:translateY(-12px) rotate(-11deg)}75%{transform:translateY(-6px) rotate(-12.2deg)}100%{transform:translateY(0) rotate(-11deg)}}
+.wiggle{animation:wiggle 5s ease-in-out infinite}
+@media (prefers-reduced-motion: reduce){.wiggle{animation:none}}
+</style>
+</helmet>
+<div style="font-family: 'Nunito Sans', sans-serif; color: #111111; background: #FFFFFF; overflow-x: hidden">
+
+<!-- HEADER -->
+<header style="border-bottom: 1px solid #E6E6E6">
+<nav style="max-width: 1320px; margin: 0 auto; padding: 18px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<a href="#top" style="font-weight: 900; font-size: 22px; text-decoration: none">27th Marketing</a>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 24px; font-size: 16px; font-weight: 600">
+<a href="#work" style="text-decoration: none">Work</a>
+<a href="#team" style="text-decoration: none">Team</a>
+<a href="#pricing" style="text-decoration: none">Pricing</a>
+<a href="#book" style="background: #111111; color: #FFFFFF; font-weight: 800; padding: 12px 22px; border-radius: 10px; text-decoration: none">Book a free call</a>
+</div>
+</nav>
+</header>
+
+<!-- 1. CALLING THEM OUT -->
+<section id="top" style="max-width: 1320px; margin: 0 auto; padding: 96px 24px; min-height: 640px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 48px">
+<div style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px">
+<h1 style="margin: 0; font-weight: 900; font-size: clamp(36px, 4.4vw, 60px); line-height: 1.12">Posting every day but still no one's messaging you?</h1>
+<p style="margin: 0; font-size: 20px; line-height: 1.5; color: #444444; max-width: 520px">We shoot and edit reels for local brands so people stop scrolling and start asking for prices.</p>
+<a href="#book" style="margin-top: 12px; background: #111111; color: #FFFFFF; font-weight: 800; font-size: 18px; padding: 18px 36px; border-radius: 10px; text-decoration: none">Get my free game plan</a>
+</div>
+<div style="flex: 0 1 480px; min-width: 0; position: relative; height: 500px">
+<sc-for list="{{heroCards}}" as="c" hint-placeholder-count="4">
+<div style="position: absolute; left: 40px; top: 40px; width: 280px; height: 380px; background: {{c.bg}}; border: 1px solid #DADADA; border-radius: 6px; box-shadow: 0 6px 18px rgba(0,0,0,0.08); padding: 0; box-sizing: border-box; overflow: hidden; transform: {{c.t}}; opacity: {{c.o}}; z-index: {{c.z}}; transition: transform .8s cubic-bezier(.2,.7,.2,1), opacity .5s ease">
+<sc-if value="{{c.img}}"><img src="{{c.img}}" alt="{{c.alt}}" loading="eager" style="width: 100%; height: 100%; object-fit: cover; display: block"></sc-if>
+<sc-if value="{{c.video}}"><video src="{{c.video}}" poster="{{c.poster}}" aria-label="{{c.alt}}" sc-camel-auto-play="" muted="" loop="" sc-camel-plays-inline="" preload="auto" style="width: 100%; height: 100%; object-fit: cover; display: block"></video></sc-if>
+</div>
+</sc-for>
+</div>
+</section>
+
+<!-- 2. PORTFOLIO -->
+<section id="work" style="max-width: 1320px; margin: 0 auto; padding: 96px 24px; min-height: 640px; display: flex; flex-wrap: wrap-reverse; align-items: center; justify-content: space-between; gap: 48px">
+<div style="flex: 0 1 480px; min-width: 0; position: relative; height: 520px">
+<sc-for list="{{videoCards}}" as="c" hint-placeholder-count="7">
+<div style="position: absolute; left: 20px; top: 60px; width: 290px; height: 390px; background: #111111; border: 1px solid #DADADA; border-radius: 6px; box-shadow: 0 6px 18px rgba(0,0,0,0.08); padding: 0; box-sizing: border-box; overflow: hidden; transform: {{c.t}}; opacity: {{c.o}}; z-index: {{c.z}}; transition: transform .8s cubic-bezier(.2,.7,.2,1), opacity .5s ease">
+<video src="{{c.video}}" poster="{{c.poster}}" aria-label="{{c.alt}}" sc-camel-auto-play="" muted="" loop="" sc-camel-plays-inline="" preload="metadata" style="width: 100%; height: 100%; object-fit: cover; display: block"></video>
+<div style="position: absolute; left: 0; right: 0; bottom: 0; padding: 48px 16px 16px; background: linear-gradient(to top, rgba(0,0,0,0.78), rgba(0,0,0,0)); display: flex; flex-direction: column; gap: 4px; color: #FFFFFF; text-align: left">
+<span style="font-size: 14px; font-weight: 600; opacity: 0.9">{{c.label}}</span>
+<span style="font-weight: 800; font-size: 20px">{{c.stat}}</span>
+</div>
+</div>
+</sc-for>
+</div>
+<div style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 18px">
+<h2 style="margin: 0; font-weight: 900; font-size: clamp(32px, 3.8vw, 52px); line-height: 1.15">What if your next reel was the one that filled your calendar?</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.5; color: #444444; max-width: 520px">“[Short client quote about what changed after posting.]” — [Name], [Business]</p>
+<a href="#book" style="margin-top: 12px; background: #111111; color: #FFFFFF; font-weight: 800; font-size: 18px; padding: 18px 36px; border-radius: 10px; text-decoration: none">I want results like this</a>
+</div>
+</section>
+
+<!-- 3. ONE VIDEO PROOF -->
+<section style="max-width: 1320px; margin: 0 auto; padding: 96px 24px; min-height: 640px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 48px">
+<div style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 18px">
+<h2 style="margin: 0; font-weight: 900; font-size: clamp(32px, 3.8vw, 52px); line-height: 1.15">One video. Small page. Here's what it did.</h2>
+<!-- SAMPLE NUMBERS: invented placeholders, replace with Chelay's real results before launch -->
+<p style="margin: 0; font-size: 20px; font-weight: 800">64K views · 210 inquiries · ₱3,000 ad spend</p>
+<p style="margin: 0; font-size: 17px; line-height: 1.5; color: #444444; max-width: 520px">“[Chelay's testimonial in her own words.]” — Chelay, [Business]</p>
+<a href="#book" style="margin-top: 12px; background: #111111; color: #FFFFFF; font-weight: 800; font-size: 18px; padding: 18px 36px; border-radius: 10px; text-decoration: none">Plan my first video</a>
+</div>
+<div style="flex: 0 1 480px; min-width: 0; display: flex; justify-content: center; padding: 40px 0">
+<div class="wiggle" style="width: 360px; max-width: 100%; aspect-ratio: 9 / 16; background: #111111; border: 1px solid #DADADA; border-radius: 6px; box-shadow: 0 10px 24px rgba(0,0,0,0.1); padding: 0; box-sizing: border-box; overflow: hidden">
+<video src="./assets/chelay-proof.mp4" poster="./assets/chelay-proof-poster.jpg" aria-label="Chelay's reel that we shot and edited" sc-camel-auto-play="" muted="" loop="" sc-camel-plays-inline="" controls="" preload="auto" style="width: 100%; height: 100%; object-fit: cover; display: block"></video>
+</div>
+</div>
+</section>
+
+<!-- 4. TEAM -->
+<section id="team" style="max-width: 1320px; margin: 0 auto; padding: 96px 24px; min-height: 640px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 48px">
+<div style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 22px">
+<h2 style="margin: 0; font-weight: 900; font-size: clamp(32px, 3.8vw, 52px); line-height: 1.15">Who you're actually working with</h2>
+<div style="display: flex; flex-direction: column; gap: 4px; margin-top: 12px">
+<p style="margin: 0; font-weight: 900; font-size: 34px">{{member.name}}</p>
+<p style="margin: 0; font-weight: 800; font-size: 22px; color: #444444">({{member.role}})</p>
+</div>
+<p style="margin: 0; font-size: 19px; line-height: 1.5; color: #444444; max-width: 480px">{{member.desc}}</p>
+</div>
+<div style="flex: 0 1 480px; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 24px">
+<div style="position: relative; width: 420px; max-width: 100%; height: 440px">
+<sc-for list="{{teamCards}}" as="c" hint-placeholder-count="4">
+<div style="position: absolute; left: 30px; top: 40px; width: 270px; height: 340px; background: {{c.bg}}; border: 1px solid #DADADA; border-radius: 6px; box-shadow: 0 6px 18px rgba(0,0,0,0.08); padding: 0; box-sizing: border-box; overflow: hidden; transform: {{c.t}}; opacity: {{c.o}}; z-index: {{c.z}}; transition: transform .8s cubic-bezier(.2,.7,.2,1), opacity .5s ease"><img src="{{c.photo}}" alt="{{c.alt}}" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+</sc-for>
+</div>
+<a href="#book" style="background: #111111; color: #FFFFFF; font-weight: 800; font-size: 17px; padding: 16px 32px; border-radius: 10px; text-decoration: none">Talk to us for free</a>
+</div>
+</section>
+
+<!-- 5. PROCESS -->
+<section style="max-width: 1320px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; align-items: center; gap: 64px">
+<h2 style="margin: 0; font-weight: 900; font-size: clamp(32px, 3.8vw, 52px); line-height: 1.15; text-align: center">What it's like working with us</h2>
+<ol style="margin: 0; padding: 0; list-style: none; width: 100%; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 32px">
+<sc-for list="{{steps}}" as="s" hint-placeholder-count="4">
+<li style="background: #F4F4F4; border: 1px solid #E2E2E2; border-radius: 6px; padding: 20px; display: flex; flex-direction: column; gap: 10px">
+<h3 style="margin: 0; font-weight: 900; font-size: 21px; line-height: 1.25">{{s.title}}</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.45; color: #444444">{{s.body}}</p>
+</li>
+</sc-for>
+</ol>
+</section>
+
+<!-- 6. PRICING -->
+<section id="pricing" style="max-width: 1320px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; align-items: center; gap: 56px">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center">
+<h2 style="margin: 0; font-weight: 900; font-size: clamp(32px, 3.8vw, 52px); line-height: 1.15">Pick where you want to start.</h2>
+<p style="margin: 0; font-size: 18px; color: #444444">Simple packages, no surprise fees.</p>
+</div>
+<div style="width: 100%; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 48px">
+<sc-for list="{{tiers}}" as="p" hint-placeholder-count="3">
+<div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 16px">
+<div style="position: relative; width: 100%; max-width: 260px; background: {{p.boxBg}}; color: {{p.boxFg}}; border: 1px solid #DADADA; border-radius: 6px; padding: 18px 16px; box-sizing: border-box; text-align: left">
+<sc-if value="{{p.popular}}" hint-placeholder-val="{{ false }}">
+<span style="position: absolute; top: -13px; right: 12px; background: #FFFFFF; color: #111111; border: 1px solid #111111; font-size: 12px; font-weight: 800; padding: 4px 10px; border-radius: 999px">Most popular</span>
+</sc-if>
+<span style="font-weight: 900; font-size: 26px">{{p.name}}</span>
+</div>
+<p style="margin: 0; font-weight: 900; font-size: 30px">{{p.price}} <span style="font-weight: 600; font-size: 16px; color: #666666">/ month</span></p>
+<div style="display: flex; flex-direction: column; gap: 4px; font-weight: 800; font-size: 19px; line-height: 1.35">
+<sc-for list="{{p.items}}" as="it" hint-placeholder-count="3"><span>{{it}}</span></sc-for>
+</div>
+<p style="margin: 0; font-size: 16px; line-height: 1.45; color: #444444; max-width: 260px">{{p.extras}}</p>
+<p style="margin: 0; font-weight: 800; font-size: 16px; line-height: 1.4; max-width: 260px">{{p.goodFor}}</p>
+</div>
+</sc-for>
+</div>
+</section>
+
+<!-- 7. FINAL CTA + MEME -->
+<section id="book" style="max-width: 1320px; margin: 0 auto; padding: 96px 24px 120px; min-height: 640px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 48px">
+<div style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 18px">
+<h2 style="margin: 0; font-weight: 900; font-size: clamp(30px, 3.4vw, 46px); line-height: 1.2">Still not sure what to post next?</h2>
+<p style="margin: 0; font-size: 20px; line-height: 1.5; color: #333333; max-width: 540px">Give us 15 minutes. We'll look at your page and hand you a content game plan: what to post, what to stop posting, and the first video we'd make.</p>
+<p style="margin: 0; font-size: 20px; font-weight: 800">Use it with us or on your own. It's yours either way.</p>
+<a href="#book" style="margin-top: 12px; background: #111111; color: #FFFFFF; font-weight: 800; font-size: 18px; padding: 18px 36px; border-radius: 10px; text-decoration: none">Get my free game plan</a>
+</div>
+<div style="flex: 0 1 480px; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 28px; padding: 40px 0">
+<div class="wiggle" style="width: 360px; max-width: 100%; aspect-ratio: 4 / 5; background: #EFEFEF; border: 1px solid #DADADA; border-radius: 6px; box-shadow: 0 10px 24px rgba(0,0,0,0.1); padding: 0; box-sizing: border-box; overflow: hidden"><img src="./assets/meme.jpg" alt="Crying Jordan meme captioned: PLS BOOK US. We're running out of excuses." loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+<p style="margin: 0; font-size: 16px; color: #555555; font-style: italic; text-align: center; max-width: 340px">If this is you, the call's free. We've all been there.</p>
+</div>
+</section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":5600}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { tick: 0, leaving: false };
+  }
+  componentDidMount() {
+    // React doesn't always reflect `muted` to the DOM, which blocks autoplay; force it.
+    try {
+      document.querySelectorAll('video[autoplay]').forEach(function (v) {
+        v.muted = true;
+        var p = v.play();
+        if (p && p.catch) p.catch(function () {});
+      });
+    } catch (e) {}
+    var reduce = false;
+    try { reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+    if (reduce) return;
+    var self = this;
+    this.timer = setInterval(function () {
+      self.setState({ leaving: true });
+      self.out = setTimeout(function () {
+        self.setState(function (s) { return { tick: s.tick + 1, leaving: false }; });
+      }, 450);
+    }, 2800);
+  }
+  componentWillUnmount() {
+    clearInterval(this.timer);
+    clearTimeout(this.out);
+  }
+  stack(items, slots) {
+    var n = items.length, f = this.state.tick % n, leaving = this.state.leaving;
+    return items.map(function (it, i) {
+      var slot = (i - f + n) % n;
+      var t = slots[slot];
+      var o = 1;
+      if (slot === 0 && leaving) { t = t + ' translateY(-90px) scale(1.04)'; o = 0; }
+      return Object.assign({}, it, { t: t, o: o, z: n - slot, bg: slot === 0 ? '#EFEFEF' : '#F6F6F6' });
+    });
+  }
+  renderVals() {
+    var team = [
+      { name: '[Full name]', role: '[Founder / Creative Director]', desc: '[Description and experience: years in the field, brands shot for, what they’re best at.]', photo: './assets/team-boss.jpg', alt: 'Team member photo' },
+      { name: 'Kyle [Surname]', role: '[Videographer]', desc: '[Description and experience.]', photo: './assets/team-kyle.jpg', alt: 'Kyle' },
+      { name: 'CJ [Surname]', role: '[Editor]', desc: '[Description and experience.]', photo: './assets/team-cj.jpg', alt: 'CJ' },
+      { name: 'Merylle [Surname]', role: '[Role]', desc: '[Description and experience.]', photo: './assets/team-merylle.jpg', alt: 'Merylle' }
+    ];
+    return {
+      heroCards: this.stack([
+        { img: './assets/bts-2.jpg', alt: 'Behind the scenes: camera on a tripod framing a product shot' },
+        { video: './assets/bts-clip.mp4', poster: './assets/bts-clip-poster.jpg', alt: 'Behind the scenes: product reel of suede boots' },
+        { img: './assets/bts-3.jpg', alt: 'Behind the scenes: camera set up for a room shoot' },
+        { img: './assets/bts-1.jpg', alt: 'Behind the scenes: lining up a shot on the phone camera' }
+      ], ['translate(150px,-40px) rotate(6deg)', 'translate(95px,-10px) rotate(1deg)', 'translate(40px,20px) rotate(-4deg)', 'translate(-20px,50px) rotate(-10deg)']),
+      // SAMPLE NUMBERS: the stats below are invented placeholders, replace with real results before launch
+      videoCards: this.stack([
+        { label: 'Chelay’s Crib · Staycation ad', stat: '86K views · 140 inquiries', video: './assets/work-chelay-ad.mp4', poster: './assets/work-chelay-ad-poster.jpg', alt: 'Reel we made for Chelay’s Crib: a bright, made-up bedroom with a Book Now title' },
+        { label: 'Handheld · Custom ankle boots', stat: '42K views · 95 DMs', video: './assets/work-custom-shoe.mp4', poster: './assets/work-custom-shoe-poster.jpg', alt: 'Reel we made for Handheld: custom ankle boots unboxed against a mustard backdrop' },
+        { label: 'Handheld · Horsebit loafer', stat: '118K views · 23 orders', video: './assets/work-loafer.mp4', poster: './assets/work-loafer-poster.jpg', alt: 'Reel we made for Handheld: hands turning a black horsebit loafer with gold hardware' },
+        { label: 'MCA · Facial treatment', stat: '31K views · 60 bookings', video: './assets/work-mca.mp4', poster: './assets/work-mca-poster.jpg', alt: 'Reel we made for MCA: a client getting a facial under a treatment lamp' },
+        { label: 'Chelay’s Crib · Room tour', stat: '[views · inquiries]', video: './assets/work-chelay-2.mp4', poster: './assets/work-chelay-2-poster.jpg', alt: 'Reel we made for Chelay’s Crib: a styled entry table with a round mirror and the caption “you found another of those Airbnb”' },
+        { label: 'MCA · Skin consultation', stat: '[views · bookings]', video: './assets/work-mca-2.mp4', poster: './assets/work-mca-2-poster.jpg', alt: 'Reel we made for MCA: a doctor on a pink sofa asking “Looking tired even when you’re not?”' },
+        { label: 'Chelay’s Crib · House vs. stay', stat: '[views · inquiries]', video: './assets/work-chelay-3.mp4', poster: './assets/work-chelay-3-poster.jpg', alt: 'Reel we made for Chelay’s Crib: a clean kitchen sink with the caption “house vs..”' }
+        // Only 4 cards fan out; slots 5-7 sit hidden behind the back card until they rotate forward.
+      ], ['translate(150px,-20px) rotate(12deg)', 'translate(100px,0px) rotate(7deg)', 'translate(50px,15px) rotate(2deg)', 'translate(0px,30px) rotate(-3deg)', 'translate(0px,30px) rotate(-3deg)', 'translate(0px,30px) rotate(-3deg)', 'translate(0px,30px) rotate(-3deg)']),
+      teamCards: this.stack(team, ['translate(120px,-10px) rotate(9deg)', 'translate(80px,5px) rotate(4deg)', 'translate(40px,22px) rotate(-1deg)', 'translate(0px,40px) rotate(-5deg)']),
+      member: team[this.state.tick % team.length],
+      steps: [
+        { title: 'Brand and Content Consultation', body: 'We learn what you sell, who buys it, and what has or hasn’t worked so far.' },
+        { title: 'Research', body: 'We study your competitors and trends, then write the hooks and shot list for you to approve.' },
+        { title: 'Onsite Shoot', body: 'We come to you with the gear and direction. You just show up.' },
+        { title: 'Post Production (editing)', body: 'Reels and graphics, captioned and ready to post.' }
+      ],
+      tiers: [
+        { name: 'Starter', price: '₱15K', items: ['1 shoot', '8 reels + 4 graphics'], extras: 'Hooks and captions written for you', goodFor: '(Good for testing what video can do for your brand)', boxBg: '#F4F4F4', boxFg: '#111111', popular: false },
+        { name: 'Growth', price: '₱25K', items: ['1 full-day shoot', '14 reels + 8 graphics'], extras: 'Hooks, scripts and captions, a monthly content calendar, and a monthly results recap', goodFor: '(Good for posting consistently and turning views into sales)', boxBg: '#111111', boxFg: '#FFFFFF', popular: true },
+        { name: 'Full Studio', price: '₱40K', items: ['3 shoots', '25 reels + 10 graphics'], extras: 'Everything in Growth, plus a brand and offer positioning session, priority editing and a monthly strategy call', goodFor: '(Good for launches, rebrands and going all-in on sales and virality)', boxBg: '#F4F4F4', boxFg: '#111111', popular: false }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
