@@ -2,13 +2,13 @@
 # Assumes the site lives at the domain root (e.g. https://27thmarketing.com/).
 
 Options -MultiViews -Indexes
-DirectoryIndex home.html index.html
+DirectoryIndex index.html
 
 <IfModule mod_rewrite.c>
 RewriteEngine On
 
-# /home and /home.html -> / (home.html is the landing page)
-RewriteCond %{THE_REQUEST} \s/+home(?:\.html)?[\s?] [NC]
+# /index, /index.html, and old /home links -> / (index.html is the landing page)
+RewriteCond %{THE_REQUEST} \s/+(?:index|home)(?:\.html)?[\s?] [NC]
 RewriteRule ^ / [R=301,L]
 
 # /page.html -> /page
